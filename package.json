@@ -1,6 +1,9 @@
 {
   "name": "expencify-app",
   "version": "1.0.0",
+  "engines": {
+    "node": "^8 || ^10"
+  },
   "main": "index.js",
   "author": "Pedro Marins",
   "license": "MIT",
