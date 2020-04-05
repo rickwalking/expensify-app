@@ -1,7 +1,5 @@
 import * as firebase from 'firebase';
 
-import moment from 'moment';
-
   // Your web app's Firebase configuration
 const firebaseConfig = {
     apiKey: process.env.FIREBASE_API_KEY,
@@ -17,8 +15,9 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 const database = firebase.database();
+const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
 
-export { firebase, database as default };
+export { firebase, googleAuthProvider, database as default };
 
 // database.ref().set({
 //     name: 'Irineu',
