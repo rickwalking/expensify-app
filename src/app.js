@@ -46,6 +46,7 @@ ReactDOM.render(<p>Loading...</p>, document.getElementById('root'));
 
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
+        console.log(user);
         store.dispatch(login(user.uid));
         store.dispatch(startSetExpenses()).then(() => {
             renderApp();
@@ -55,6 +56,7 @@ firebase.auth().onAuthStateChanged((user) => {
         return;
     }
 
+    console.log('log out')
     store.dispatch(logout());
     renderApp();
     history.push('/');
