@@ -47,8 +47,8 @@ const redirectLogin = () => {
 ReactDOM.render(<LoadingIndicator />, document.getElementById('root'));
 
 firebase.auth().onAuthStateChanged((user) => {
+    console.log(user);
     if (user) {
-        console.log(user);
         store.dispatch(login(user.uid));
         store.dispatch(startSetExpenses()).then(() => {
             renderApp();
