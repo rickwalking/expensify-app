@@ -11,6 +11,8 @@ import { AppRouter, history } from './routers/AppRouter';
 
 import { firebase } from './firebase/firebase';
 
+import { LoadingIndicator } from './components/LoadingIndicator';
+
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
 import 'react-dates/lib/css/_datepicker.css';
@@ -42,7 +44,7 @@ const redirectLogin = () => {
     history.push('/dashboard');
 }
 
-ReactDOM.render(<p>Loading...</p>, document.getElementById('root'));
+ReactDOM.render(<LoadingIndicator />, document.getElementById('root'));
 
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
@@ -56,7 +58,6 @@ firebase.auth().onAuthStateChanged((user) => {
         return;
     }
 
-    console.log('log out')
     store.dispatch(logout());
     renderApp();
     history.push('/');

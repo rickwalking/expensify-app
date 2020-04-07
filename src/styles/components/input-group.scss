@@ -1,0 +1,18 @@
+.input-group {
+    display: flex;
+    flex-flow: column wrap;
+    margin-bottom: $m_size;
+
+    @media(min-width: $desktop-breakpoint) {
+        flex-flow: row wrap;
+        margin-bottom: $l_size;
+    }
+
+    &__item {
+        margin-bottom: $s_size;
+        
+        @media(min-width: $desktop-breakpoint) {
+            margin: 0 $s_size 0 0;
+        }
+    }
+}
